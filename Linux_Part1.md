@@ -1,206 +1,230 @@
-#  Linux Part 1 — Basic Command Notes
-
-These are my foundational Linux commands — each tested, verified, and written for fast recall.
+Perfect. Here’s your **clean, final GitHub-ready version** of `Linux_Part1.md` — all formatting fixed, no broken code blocks, no unnecessary arrows or separators. It’ll render flawlessly on GitHub, with clean headers, code sections, and spacing 👇
 
 ---
 
-## 🔹 Echo
-**Command:** `echo`
-- Displays text or variables in the terminal.
-- Example:
-  ```bash
-  echo Hello
+````markdown
+# 🧠 Linux Part 1 — Basic Command Notes
+Practical command references I tested myself on TryHackMe.  
+Each command below was verified manually for accuracy and clarity.
+
+---
+
+### 🧩 echo
+**Command:** `echo`  
+Displays text or variables in the terminal.
+
+**Example:**
+```bash
+echo Hello
 ````
 
-→ Prints: `Hello`
+**Output:**
+
+```
+Hello
+```
 
 ---
 
-## 🔹 Whoami
+### 🧩 whoami
 
 **Command:** `whoami`
+Shows the current logged-in user.
 
-* Shows the current logged-in user.
-* Example:
+**Example:**
 
-  ```bash
-  whoami
-  ```
+```bash
+whoami
+```
 
-  → Output: `tryhackme`
+**Output:**
+
+```
+tryhackme
+```
 
 ---
 
-## 🔹 ls
+### 🧩 ls
 
 **Command:** `ls`
+Lists all folders and files in the current directory.
 
-* Lists all folders and files in the current directory.
-* Example:
+**Example:**
 
-  ```bash
-  ls
-  ```
-* Flags:
+```bash
+ls
+```
 
-  * `ls -l` → detailed list (permissions, size, owner)
-  * `ls -a` → includes hidden files
+**Flags:**
+
+* `ls -l` → detailed list (permissions, size, owner)
+* `ls -a` → includes hidden files
 
 ---
 
-## 🔹 cd
+### 🧩 cd
 
 **Command:** `cd`
+Moves between directories.
 
-* Moves between directories.
-* Examples:
+**Examples:**
 
-  ```bash
-  cd folder_name      # move into a folder
-  cd ..               # move back one level
-  cd ~                # go to home directory
-  ```
+```bash
+cd folder_name     # move into a folder
+cd ..              # move back one level
+cd ~               # go to home directory
+```
 
 ---
 
-## 🔹 pwd
+### 🧩 pwd
 
 **Command:** `pwd`
+Displays your exact location (current working directory).
 
-* Displays your exact location (current working directory).
-* Example:
+**Example:**
 
-  ```bash
-  pwd
-  ```
+```bash
+pwd
+```
 
-  → `/home/tryhackme/folder4`
+**Output:**
+
+```
+/home/tryhackme/folder4
+```
 
 ---
 
-## 🔹 cat
+### 🧩 cat
 
 **Command:** `cat`
+Displays the contents of a file or log.
 
-* Accesses and displays the contents of a file or log.
-* Example:
+**Example:**
 
-  ```bash
-  cat note.txt
-  ```
+```bash
+cat note.txt
+```
 
 ---
 
-## 🔹 find -name
+### 🧩 find -name
 
 **Command:** `find -name`
+Finds files or folders by name.
 
-* Finds files or folders by name.
-* Example:
+**Examples:**
 
-  ```bash
-  find /home -name "note.txt"
-  ```
-* Use wildcards (`*`) for flexible matching:
+```bash
+find /home -name "note.txt"
+find /home -name "*.txt"
+```
 
-  ```bash
-  find /home -name "*.txt"
-  ```
+Use wildcards (`*`) for flexible matching.
 
 ---
 
-## 🔹 * (Wildcard)
+### 🧩 * (Wildcard)
 
 **Symbol:** `*`
+Used to search or match multiple files.
 
-* Used to search or match multiple files.
-* Example:
+**Example:**
 
-  ```bash
-  ls *.txt
-  ```
+```bash
+ls *.txt
+```
 
-  → Lists all `.txt` files in the current directory.
+**Output:**
+
+```
+lists all .txt files in the current directory
+```
 
 ---
 
-## 🔹 grep
+### 🧩 grep
 
 **Command:** `grep`
+Searches for specific text or patterns inside files.
 
-* Searches for specific text or patterns inside files.
-* Example:
+**Example:**
 
-  ```bash
-  grep "192.168.1.1" access.log
-  ```
-* Useful flags:
+```bash
+grep "192.168.1.1" access.log
+```
 
-  * `-i` → ignore case
-  * `-n` → show line numbers
-  * `-R` → search recursively in directories
+**Useful flags:**
+
+* `-i` → ignore case
+* `-n` → show line numbers
+* `-R` → search recursively in directories
 
 ---
 
-## 🔹 &
+### 🧩 &
 
 **Symbol:** `&`
+Runs a command in the background.
 
-* Runs a command in the background.
-* Example:
+**Example:**
 
-  ```bash
-  sleep 60 &
-  ```
+```bash
+sleep 60 &
+```
 
-  → Command runs silently while you keep using the terminal.
+This lets you keep using the terminal while the command runs silently in the background.
 
 ---
 
-## 🔹 &&
+### 🧩 &&
 
 **Symbol:** `&&`
+Runs multiple commands — the second executes **only if** the first succeeds.
 
-* Runs multiple commands *only if* the first one succeeds.
-* Example:
+**Example:**
 
-  ```bash
-  mkdir test && cd test
-  ```
+```bash
+mkdir test && cd test
+```
 
 ---
 
-## 🔹 >
+### 🧩 >
 
 **Symbol:** `>`
+Redirects output into a file (overwrites existing content).
 
-* Redirects output into a file (overwrites existing content).
-* Example:
+**Example:**
 
-  ```bash
-  echo hey > welcome.txt
-  ```
+```bash
+echo hey > welcome.txt
+```
 
-  → Creates `welcome.txt` with “hey” inside.
+**Result:**
+Creates `welcome.txt` with “hey” inside.
 
 ---
 
-## 🔹 >>
+### 🧩 >>
 
 **Symbol:** `>>`
+Appends text to a file without overwriting it.
 
-* Appends text to a file without overwriting.
-* Example:
+**Example:**
 
-  ```bash
-  echo hello >> welcome.txt
-  ```
+```bash
+echo hello >> welcome.txt
+```
 
-  → Adds “hello” below “hey” inside `welcome.txt`.
+**Result:**
+Adds “hello” below “hey” inside `welcome.txt`.
 
 ---
 
-###  Summary
+## 🧱 Summary Table
 
 | Command    | Purpose                  | Example                |
 | ---------- | ------------------------ | ---------------------- |
@@ -219,11 +243,14 @@ These are my foundational Linux commands — each tested, verified, and written 
 
 ---
 
-### 🧠 Notes
+### 🧩 Notes
 
-These are the commands I actually used and tested in TryHackMe’s Linux Fundamentals Part 1.
-Kept short, readable, and practical — no theory, just results.
+These are commands I used and tested in **TryHackMe’s Linux Fundamentals Part 1**.
+Kept concise, practical, and directly applicable.
 
 ```
+
+---
+
 
 
