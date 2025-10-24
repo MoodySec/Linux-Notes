@@ -1,188 +1,187 @@
 
+
 ````markdown
-# 🧠 Linux Part 2 — File Management & System Navigation  
+# 🧠 Linux Part 2 — File Management & System Navigation
+
 Practical command references I tested myself on TryHackMe.  
 Each command below was verified manually for accuracy and clarity.
 
 ---
 
-### 🧩 ls
+### 🧩 `ls -a`
+**Command:** `ls -a`  
+Lists **all files**, including hidden ones (those starting with a `.`).
 
-**Command:** `ls`  
-Lists all files and folders in the current directory.
-
-**Examples:**
+**Example:**
 ```bash
-ls
-ls -a       # show hidden files
-ls --help   # display all available options
+ls -a
+````
+
+---
+
+### 🧩 `ls --help`
+
+**Command:** `ls --help`
+Displays the **manual help page** for `ls`, showing all available options and flags.
+
+**Example:**
+
+```bash
+ls --help
 ```
 
 ---
 
-### 🧩 man
+### 🧩 `man ls`
 
-**Command:** `man`  
-Displays the manual page (documentation) for a command.
+**Command:** `man ls`
+Opens the **manual page** for `ls` with detailed explanations and usage examples.
 
 **Example:**
+
 ```bash
 man ls
 ```
 
-**Tip:**  
-Press `q` to exit the manual page.
-
 ---
 
-### 🧩 touch
+### 🧩 `touch`
 
-**Command:** `touch`  
-Creates an empty file.
+**Command:** `touch <filename>`
+Creates an **empty file** or updates the timestamp of an existing one.
 
 **Example:**
-```bash
-touch file1.txt
-```
 
-**Result:**  
-Creates a new file named `file1.txt`.
+```bash
+touch newnote.txt
+```
 
 ---
 
-### 🧩 mkdir
+### 🧩 `mkdir`
 
-**Command:** `mkdir`  
-Creates a new directory (folder).
+**Command:** `mkdir <foldername>`
+Creates a **new directory (folder)**.
 
 **Example:**
+
 ```bash
-mkdir new_folder
+mkdir myfolder
 ```
 
 ---
 
-### 🧩 cp
+### 🧩 `cp`
 
-**Command:** `cp`  
-Copies files or directories.
+**Command:** `cp <source> <destination>`
+Copies a file or folder to a new location.
 
 **Examples:**
+
 ```bash
-cp file1.txt backup.txt          # copy file
-cp -r folder1/ backup_folder/    # copy directories recursively
+cp file.txt /home/tryhackme/
+cp -r folder1 folder2    # copy directories recursively
 ```
 
 ---
 
-### 🧩 mv
+### 🧩 `mv`
 
-**Command:** `mv`  
-Moves or renames files and directories.
+**Command:** `mv <source> <destination>`
+Moves or **renames** files and directories.
 
 **Examples:**
+
 ```bash
-mv file1.txt folder1/            # move file
-mv oldname.txt newname.txt       # rename file
+mv note.txt myfolder/          # move
+mv oldname.txt newname.txt     # rename
 ```
 
 ---
 
-### 🧩 rm
+### 🧩 `rm`
 
-**Command:** `rm`  
-Removes (deletes) files or directories.
-
-**Examples:**
-```bash
-rm file1.txt             # remove file
-rm -R folder1            # remove directory and its contents
-```
-
-⚠️ **Warning:** No recycle bin — deletion is permanent.
-
----
-
-### 🧩 file
-
-**Command:** `file`  
-Determines the type of a file.
+**Command:** `rm <filename>`
+Deletes a file.
 
 **Example:**
+
 ```bash
-file note.txt
+rm file.txt
 ```
 
-**Output Example:**
-```
-note.txt: ASCII text
-```
+**Flag:**
+`rm -R` → removes directories **recursively** (use with caution).
 
 ---
 
-### 🧩 su & su -l
+### 🧩 `file`
 
-**Commands:** `su`, `su -l`  
-Switch users or become the root user.
+**Command:** `file <filename>`
+Displays the **type of a file**, e.g. ASCII text, directory, binary, etc.
 
-**Examples:**
+**Example:**
+
 ```bash
-su          # switch to root (current environment)
-su -l       # full login shell as root
+file unknown1
 ```
 
 ---
 
-### 🧩 /etc
+### 🧩 `su` & `su -l`
 
-**Directory:** `/etc`  
-Contains system-wide configuration files.  
-Examples include:
-- `/etc/passwd` → user information  
-- `/etc/hosts` → local hostname mappings
+**Command:** `su <username>`
+Switches to another user account.
 
----
+**Command:** `su -l <username>`
+Starts a full **login shell** for the target user, inheriting their environment variables.
 
-### 🧩 /var
+**Example:**
 
-**Directory:** `/var`  
-Contains variable data like logs, mail, and temporary files.  
-Examples include:
-- `/var/log/` → system and application logs  
-- `/var/tmp/` → temporary runtime data
+```bash
+su user2
+su -l user2
+```
 
 ---
 
-### 🧩 root
+### 🧩 Key Directories
 
-**User/Directory:** `root`  
-- The **root user** is the superuser with full control over the system.  
-- The **/root directory** is the home folder for that user.
-
----
-
-## 🧱 Summary Table
-
-| Command | Purpose                        | Example                         |
-|----------|--------------------------------|----------------------------------|
-| ls       | List files and folders         | `ls -a`                          |
-| man      | View command documentation     | `man ls`                         |
-| touch    | Create empty file              | `touch file.txt`                 |
-| mkdir    | Create directory               | `mkdir new_folder`               |
-| cp       | Copy files or directories      | `cp file1 file2`                 |
-| mv       | Move or rename files           | `mv file1 folder1/`              |
-| rm       | Delete files or directories    | `rm -R folder1`                  |
-| file     | Show file type                 | `file note.txt`                  |
-| su       | Switch user                    | `su`                             |
-| su -l    | Switch to root login shell     | `su -l`                          |
-| /etc     | Config files directory         | `/etc/passwd`                    |
-| /var     | Logs and variable data         | `/var/log/`                      |
-| root     | Superuser / root home folder   | `/root`                          |
+| Directory | Description                                                |
+| --------- | ---------------------------------------------------------- |
+| `/etc`    | Contains system-wide **configuration files**.              |
+| `/var`    | Stores **variable data** such as logs and temporary files. |
+| `/root`   | The **root user’s home directory** (superuser).            |
 
 ---
 
-### 🧩 Notes
+### 🧱 Summary Table
 
-These commands were learned and tested during **TryHackMe’s Linux Fundamentals Part 2**.  
-Focus: file creation, movement, permissions, and core directories.
+| Command     | Purpose                           | Example              |
+| ----------- | --------------------------------- | -------------------- |
+| `ls -a`     | List all (including hidden) files | `ls -a`              |
+| `ls --help` | Display command help              | `ls --help`          |
+| `man ls`    | Open `ls` manual page             | `man ls`             |
+| `touch`     | Create new file                   | `touch note.txt`     |
+| `mkdir`     | Create directory                  | `mkdir newfolder`    |
+| `cp`        | Copy files/folders                | `cp file1 /home/`    |
+| `mv`        | Move or rename                    | `mv old.txt new.txt` |
+| `rm`        | Remove file                       | `rm file.txt`        |
+| `rm -R`     | Remove directory                  | `rm -R folder`       |
+| `file`      | Check file type                   | `file unknown1`      |
+| `su`        | Switch user                       | `su user2`           |
+| `su -l`     | Switch user (login shell)         | `su -l user2`        |
+| `/etc`      | Config files directory            | —                    |
+| `/var`      | Variable/log data                 | —                    |
+| `/root`     | Root home directory               | —                    |
+
+---
+
+🧩 *These notes were built and verified in TryHackMe — Linux Fundamentals Part 2.
+Each command was executed and confirmed inside a live environment.*
+
+```
+
+
+
 
