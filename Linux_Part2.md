@@ -17,7 +17,7 @@ Lists **all files**, including hidden ones (those starting with a `.`).
 
 ```bash
 ls -a
-```
+````
 
 ---
 
