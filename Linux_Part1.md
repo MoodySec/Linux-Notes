@@ -15,7 +15,7 @@ Displays text or variables in the terminal.
 **Example:**
 ```bash
 echo Hello
-````
+```
 
 **Output:**
 
