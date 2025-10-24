@@ -5,7 +5,7 @@
 
 Practical command references I tested myself on TryHackMe.  
 Each command below was verified manually for accuracy and clarity.
-
+````
 ---
 
 ### 🧩 `ls -a`
