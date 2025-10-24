@@ -13,6 +13,7 @@ Each command below was verified manually for accuracy and clarity.
 Lists **all files**, including hidden ones (those starting with a `.`).
 
 **Example:**
+
 ```bash
 ls -a
 ````
