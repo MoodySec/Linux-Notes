@@ -9,6 +9,7 @@ Each command below was verified manually for accuracy and clarity.
 ---
 
 ### 🧩 `ls -a`
+
 **Command:** `ls -a`  
 Lists **all files**, including hidden ones (those starting with a `.`).
 
