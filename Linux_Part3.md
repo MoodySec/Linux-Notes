@@ -1,10 +1,10 @@
----
 
-```markdown
+
+````markdown
 # 🧠 Linux Part 1 — Basic Command Notes
 Practical command references I tested myself on TryHackMe.  
 Each command below was verified manually for accuracy and clarity.
-```
+````
 
 ---
 
@@ -272,4 +272,4 @@ sudo tail -f /var/log/syslog
 
 ### 🧩 Notes
 
-These are commands and tips I used and tested in TryHackMe’s Linux fundamentals. Kept concise, practical, and directly applicable — copy-paste ready for your GitHub study notes or cheat-sheet repo.
+These are commands and tips I used and tested in TryHackMe’s Linux fundamentals. Kept concise, practical, and directly applicable.
