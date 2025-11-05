@@ -1,7 +1,7 @@
 
 
 ````markdown
-# 🧠 Linux Part 1 — Basic Command Notes
+# 🧠 Linux Part 3 — Linux Essentials — Process, Networking, and Automation
 Practical command references I tested myself on TryHackMe.  
 Each command below was verified manually for accuracy and clarity.
 ````
